@@ -1,0 +1,48 @@
+.dashboard {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #1c1c1c;
+  min-height: 100vh;
+}
+
+.nav-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-item:hover {
+  background: #ff4444;
+  color: white;
+}
+
+.card-box {
+  background: #1e1e1e;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card-box:hover {
+  transform: scale(1.05);
+  background: #ff4444;
+}
+
+
+
+.big-number {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+}
+
+.card-box {
+  background-color: #222 !important;
+  color: #fff !important;
+}
