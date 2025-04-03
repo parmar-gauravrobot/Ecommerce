@@ -1,4 +1,6 @@
 const isAdmin = (req, res, next) => {
+  console.log("Decoded User:", req.user); // Debug log
+
   // Assuming that the user's role is available in req.user (after authentication)
   if (!req.user || req.user.role !== 'admin') {
     return res.status(403).json({ msg: 'Permission denied. Admins only.' });

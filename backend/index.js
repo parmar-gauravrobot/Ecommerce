@@ -8,6 +8,7 @@ import { addProduct, deleteProduct, getAllUsers, getOrderStats, updateProduct } 
 import isAdmin from "./src/middlewares/admin.js"
 import { addItemToCart, getCartItems, updateCartItemQuantity } from "./src/controllers/cartController.js"
 import { upload } from "./src/middlewares/multerMiddleware.js"
+import { getAllProducts } from "./src/controllers/productController.js"
 
 
 
@@ -34,10 +35,11 @@ app.post('/signup', upload.single('image'), SignUp)
  app.put("/updateCartItemQuantity", updateCartItemQuantity)
 
  
- app.post("/addProduct", isAdmin, addProduct)
+ app.post("/addProduct", authMiddleware,isAdmin, addProduct)
  app.put("/updateProduct", isAdmin, updateProduct),
  app.delete("/deleteProduct", isAdmin, deleteProduct),
  app.get("/getAllUsers", authMiddleware, isAdmin, getAllUsers),
+ app.get("/getAllProducts", getAllProducts)
   //app.get("/getAllUsers", getAllUsers),
 
  app.get("/getOrderStatus", isAdmin, getOrderStats)
